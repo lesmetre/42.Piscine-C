@@ -1,0 +1,1 @@
+ldapwhoami -Q | sed s'/^...//' | sed s'/ou=paris,//' | sed s'/ou=2016_paris,//'
