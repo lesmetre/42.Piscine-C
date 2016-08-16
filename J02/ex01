@@ -1,0 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mugrassi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/05 14:58:25 by mugrassi          #+#    #+#             */
+/*   Updated: 2016/08/05 14:58:46 by mugrassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putchar(char c);
+
+void	ft_print_reverse_alphabet(void)
+{
+	int letter;
+
+	letter = 'z';
+	while (letter >= 'a')
+	{
+		ft_putchar(letter);
+		letter--;
+	}
+}
