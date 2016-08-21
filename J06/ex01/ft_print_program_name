@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mugrassi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/21 16:13:27 by mugrassi          #+#    #+#             */
+/*   Updated: 2016/08/21 16:13:28 by mugrassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void    ft_putchar(char c);
+
+void    ft_putstr(char *str)
+{
+    int stri;
+    stri = 0;
+    while (str[stri])
+    {
+        ft_putchar(str[stri]);
+        stri++;
+    }
+}
+
+int     main(int argc, char **argv)
+{
+    argc = 0;
+
+    ft_putstr(argv[0]);
+    ft_putchar('\n');
+    return (0);
+}
