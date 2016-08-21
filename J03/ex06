@@ -15,10 +15,10 @@ int 	ft_strlen(char *str)
 	int cont;
 
 	cont = 0;
-	while (str)
+	while (str) 
 	{
 		cont++;
 		str++;
 	}
-
+	return (0)
 }
