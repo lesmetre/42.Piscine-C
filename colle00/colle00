@@ -1,0 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colle01.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vmatthys <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/07 22:40:50 by vmatthys          #+#    #+#             */
+/*   Updated: 2016/08/07 23:39:35 by vmatthys         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	ft_putchar(char c);
+
+int		ft_is_negative(int n)
+{
+	if (n > 0)
+		return (42);
+	else
+		return (0);
+}
+
+void	ft_put_line(int row, int x, int y)
+{
+	int	c;
+
+	c = 0;
+	while (c++ < x)
+	{
+		if (row == 1 || row == y)
+		{
+			if (c != 1 && c != x)
+				ft_putchar('*');
+			else
+			{
+				if ((c == 1 && row != 1) || (c == x && row == y && row != 1))
+					ft_putchar(92);
+				else
+					ft_putchar('/');
+			}
+		}
+		else
+		{
+			if (c == 1 || c == x)
+				ft_putchar('*');
+			else
+				ft_putchar(' ');
+		}
+	}
+}
+
+int		colle(int x, int y)
+{
+	int	row;
+
+	if (ft_is_negative(x) == 0 || ft_is_negative(y) == 0)
+		return (0);
+	else
+	{
+		row = 0;
+		while (row++ < y)
+		{
+			ft_put_line(row, x, y);
+			ft_putchar('\n');
+		}
+		return (42);
+	}
+}
