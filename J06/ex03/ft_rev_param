@@ -28,8 +28,8 @@ int		main(int argc, char **argv)
 {
 	int i;
 
-	i = argc;
-	while (i > argc)
+	i = argc -1;
+	while (i > 0)
 	{
 		ft_rev_params(argv[i]);
 		ft_putchar('\n');
