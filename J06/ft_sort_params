@@ -1,0 +1,90 @@
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+size_t  ft_strlen(const char *s)
+{
+    size_t  length;
+
+    length = 0;
+    while (s[length])
+        length++;
+    return (length);
+}
+
+int     ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+    unsigned char   *s11;
+    unsigned char   *s22;
+    size_t          count;
+
+    if (n == 0)
+        return (0);
+    s11 = (unsigned char *)s1;
+    s22 = (unsigned char *)s2;
+    count = 0;
+    while (count < n)
+    {
+        if (s11[count] != s22[count])
+            return (s11[count] - s22[count]);
+        count++;
+    }
+    return (0);
+}
+
+int     ft_strcmp(const char *s1, const char *s2)
+{
+    int s1len;
+    int s2len;
+    int n;
+
+    s1len = ft_strlen(s1);
+    s2len = ft_strlen(s2);
+    if (s1len >= s2len)
+        n = s1len;
+    else
+        n = s2len;
+    return (ft_memcmp(s1, s2, n));
+}
+
+char	**ft_sort(char **argv)
+{
+	int		i;
+	char	*tmp;
+
+	i = 1;
+	while (argv[i] && argv[i + 1])
+	{
+		if (ft_strcmp(argv[i], argv[i + 1]) <= 0)
+			i++;
+		else
+		{
+			tmp = argv[i];
+			argv[i] = argv[i + 1];
+			argv[i + 1] = tmp;
+			i = 0;
+		}
+	}
+	return (argv);
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
+	int j;
+
+	j = 0;
+	argv = ft_sort(argv);
+	if (argc > 1)
+		while (argv[++j])
+		{
+			i = 0;
+			while (argv[j][i])
+				ft_putchar(argv[j][i++]);
+			ft_putchar('\n'); 
+		}
+	return (0);
+}
