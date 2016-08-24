@@ -1,0 +1,15 @@
+int		main(int argc, char **argv)
+{
+	int		(**f);
+
+
+	if (argc == 4)
+	{
+		if (argv[3][0] == '+')
+		if (argv[3][0] == '-')
+		if (argv[3][0] == '*')
+		if (argv[3][0] == '/')
+		if (argv[3][0] == '%')
+	}
+	return (0);
+}
